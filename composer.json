@@ -9,6 +9,9 @@
     "require-dev": {
         "phpspec/phpspec": "~2.0"
     },
+    "suggest": {
+        "jdorn/sql-formatter": "allows you to format the generated queries"
+    },
     "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
