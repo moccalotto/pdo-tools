@@ -3,7 +3,7 @@
 /**
  * @author Kim Hansen <moccalotto@gmail.com>
  * @package PdoTools
- * @copyright Copyright (c) 2015, Kim Hansen
+ * @copyright Copyright (c) 2016, Kim Hansen
  */
 
 namespace Moccalotto\PdoTools;
@@ -49,10 +49,9 @@ class RunnableSql implements Contracts\RunnableSqlPrinterContract
         case "boolean":
             return PDO::PARAM_BOOL;
         default:
-            return PDO::PARAM_LOB;
-            if (strlen($value) < 1024) {
-                return PDO::PARAM_STR;
-            }
+            return strlen($value) < 1024
+                ? PDO::PARAM_STR
+                : PDO::PARAM_LOB;
         }
     }
 
